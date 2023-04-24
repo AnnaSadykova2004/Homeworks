@@ -5,7 +5,14 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital", "Hospital\Hospital.csproj", "{CEC77FE1-5564-489E-8286-3ED93FEEB009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.UnitTests", "Hospital.UnitTests\Hospital.UnitTests.csproj", "{15534AA2-11CE-484A-8DE7-DEA8DD808885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital.UnitTests", "Hospital.UnitTests\Hospital.UnitTests.csproj", "{15534AA2-11CE-484A-8DE7-DEA8DD808885}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{FEAEC78A-A5D9-4D1F-BF07-C1E14DF839E6}"
+	ProjectSection(SolutionItems) = preProject
+		AmbulatoryPatient.cs = AmbulatoryPatient.cs
+		DayHospitalPatient.cs = DayHospitalPatient.cs
+		HospitalPatient.cs = HospitalPatient.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
