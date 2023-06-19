@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.Expando;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hospital
 {
-    public class Patient
+    public class Patient: IComparable<Patient>
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -28,6 +29,42 @@ namespace Hospital
         {
             return $"{Name} {Surname}. Номер полиса: {PoliceNumber}. ";
         }
+
+        public int CompareTo(Patient other)
+        {
+            if (Surname != other.Surname)
+                return Surname.CompareTo(other.Surname);
+            else return Name.CompareTo(other.Name);
+        }
+
+    }
+
+    public class PoliceNumberComparer : IComparer<Patient>
+    {
+        public int Compare(Patient x, Patient y)
+        {
+            return (int)y.PoliceNumber - (int)x.PoliceNumber;
+        }
+    }
+
+    public class Section : IEnumerable<Patient>
+    {
+        public string Title { get; set; }
+        public readonly int PatientsQuantity;
+        List<Patient> patientsList;
+
+        public int Count { get => patientsList.Count; }
+        public Section(string title, int patientsQuantity, IEnumerable<Patient> patients)
+        {
+            Title = title;
+            PatientsQuantity = patientsQuantity;
+
+            patientsList = new List<Patient>(patients.Distinct());
+        }
+
+        public IEnumerator<Patient> GetEnumerator() => patientsList.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     }
 

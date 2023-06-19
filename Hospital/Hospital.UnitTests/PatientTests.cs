@@ -27,5 +27,6 @@ namespace Hospital.UnitTests
 
             Assert.That(patient.GetInfo(), Is.EqualTo(expectedInfo));
         }
+
     }  
 }
