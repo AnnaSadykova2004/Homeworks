@@ -23,9 +23,9 @@ namespace Hospital.UnitTests
         public void GetInfo_Patient_ValueString()
         {
             string expectedInfo = "Peter Ivanov. ";
-            expectedInfo += "Номер полиса: 1378652370605432.";
+            expectedInfo += "Номер полиса: 1378652370605432. ";
 
             Assert.That(patient.GetInfo(), Is.EqualTo(expectedInfo));
         }
-    }
+    }  
 }
